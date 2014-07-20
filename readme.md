@@ -13,52 +13,53 @@
 
 	--	loading时间过长请刷新页面
 
---	兼容性：	IE9/10/11 chrome(36.0.1985.125 m) firefox(30.0)
+####	兼容性：	IE9/10/11 chrome(36.0.1985.125 m) firefox(30.0)
 
-	--	IE8好像很崩溃应该要解决需要不少时间且小游戏需要canvas
+--	IE8好像很崩溃应该要解决需要不少时间且小游戏需要canvas
 
-	--	IE bug:	用鼠标滚轮滚动会使得position: fixed 定位的元素忽闪忽闪的，没有找到解决方案
+--	IE bug:	用鼠标滚轮滚动会使得position: fixed 定位的元素忽闪忽闪的，没有找到解决方案
 
-		--	参考链接
+	--	参考链接
 
-			--	https://connect.microsoft.com/IE/feedback/details/821953/ie10-ie11-fixed-background-images-move-when-touched-scrolled
+	--	https://connect.microsoft.com/IE/feedback/details/821953/ie10-ie11-fixed-background-images-move-when-touched-scrolled
 
-			--	http://stackoverflow.com/questions/22165129/issue-in-ie-11-fixed-background-move-up-down-with-scroll
+	--	http://stackoverflow.com/questions/22165129/issue-in-ie-11-fixed-background-move-up-down-with-scroll
 
-			--	http://social.msdn.microsoft.com/Forums/ie/en-US/9567fc32-016e-48e9-86e2-5fe51fd67402/new-bug-in-ie11-scrolling-positionfixed-backgroundimage-elements-jitters-badly?forum=iewebdevelopment	
+	--	http://social.msdn.microsoft.com/Forums/ie/en-US/9567fc32-016e-48e9-86e2-5fe51fd67402/new-bug-in-ie11-scrolling-positionfixed-backgroundimage-elements-jitters-badly?forum=iewebdevelopment	
 
 ### ele网页
 
 -- 	判断是否为桌面版本，如果为手机或者平板则直接链出 http://m.ele.me/
 --	原页面采用table布局，已改用div布局
 
-#	谁去拿外卖小游戏：
+####	谁去拿外卖小游戏：
 
 --	新小游戏，通过类似刮奖的方式决定谁去（暂时四个刮刮卡）
 --	自适应， 小游戏窗口在 宽度x高度 = (320px -- 1366px)x(370px -- 700px)显示良好
 		-- 在宽度 = 768px(ipad)附近宽度改变
 
-#	新增：
+####	新增：
 
 --	由于页面数据较多，新增预加载loading页面。
 	--	实现方式是判断json数据加载和幻灯片组件的图片加载(并不能完全反映页面真实加载情况)
 	--	如果碰到loading时间过长，可能是json加载中计数器的问题。重新刷新页面即可
 
-# 	导航栏:
+#### 	导航栏:
 
 --	将导航栏固定在窗口顶端，方便用户直接搜索和进行其他操作
 	--	搜索输入框 采用$.ajax()，未能访问到数据，所以不具备搜索功能
 	--	购物车不具备相应功能
 
-#	背景：
+####	背景：
 
 --	6月- 9月： 6：00 - 20：00 白天背景(太阳，浅色) 其余时间 夜晚背景(星星，月亮，深色)
 --	10月 - 5月： 7：00 - 18：00 白天背景(太阳，浅色) 其余时间 夜晚背景(星星，月亮，深色)
 	--	好像页面有黄昏背景。。。
 
-#	幻灯片切换组件： 
+####	幻灯片切换组件： 
 
 --	使用方法： 
+	--
 		--	var promotion = new promotion(ele, {
 				width: ...,
 				height: ...,
@@ -77,9 +78,9 @@
 --	幻灯片循环播放
 --	支持鼠标选择相应幻灯片，鼠标选择时，幻灯片停止播放，鼠标未做操作后2s幻灯片自动有当前页开始循环播放
 
-#	我的收藏 不具备相应功能
+####	我的收藏 不具备相应功能
 
-#	主要部分：
+####	主要部分：
 
 --	分为品牌馆(popRestaurant.json), 主要餐厅(mainRestaurant.json), 附近团购(tuangou.json), 更多餐厅(mamRestaurant.json) 四个部分
 
@@ -98,6 +99,7 @@
 	--	(原因： 文字占用面积大，餐厅名称难以辨识)
 
 --	主要餐厅：
+
 	--	原页面热门餐厅和营业中只能二选其一
 		--	改为可以同时选中
 
@@ -113,7 +115,7 @@
 
 ###	个人建议
 
-#	ele.me 	
+####	ele.me 	
 --	页面整体设计比较拥挤，用户密集恐惧，选择困难
 	--	建议去除更多更多餐厅板块，直接将其隐藏在主要餐厅板块后，通过交互可以显示出来
 		--	太晚想到，未能实现
@@ -124,7 +126,7 @@
 
 --	采用自适应的好处还有mobile版和desktop版可以统一在一起，这样能增加统一性。
 
-#	m.ele.me
+####	m.ele.me
 --	点击区域的文字较小，难以点击精确
 	--	建议将每个点击区域调大到47x47;
 		--	美帝某知名大学研究得出的结论，基于手指平均宽度为55px左右
