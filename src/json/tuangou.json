@@ -1,0 +1,40 @@
+[{	
+	"restaurant": "万岁寿司·料理",
+	"dataHref": "http://t.dianping.com/deal/6244272",
+	"picture": "http://i1.s2.dpfile.com/pc/mc/03ede3f97f230feea9b84a616bbd5204(80x50)/thumb.jpg",
+	"count": "30088",
+	"price": "¥76",
+	"oldPrice": "¥100"
+},
+{
+	"restaurant": "尊宝比萨",
+	"dataHref": "http://t.dianping.com/deal/5275532",
+	"picture": "http://i3.s2.dpfile.com/pc/mc/bcf3137dc12364f0cbcaba461aa848e0(80x50)/thumb.jpg",
+	"count": "47571",
+	"price": "¥59",
+	"oldPrice": "¥96"
+},
+{
+	"restaurant": "九毛九山西面馆",
+	"dataHref": "http://t.dianping.com/deal/166033",
+	"picture": "http://i3.s2.dpfile.com/pc/mc/9494721f8f30b31e36f7bafc88a9b284(80x50)/thumb.jpg",
+	"count": "187716",
+	"price": "¥89.99",
+	"oldPrice": "¥100"
+},
+{
+	"restaurant": "江南果道",
+	"dataHref": "http://t.dianping.com/deal/2079256",
+	"picture": "http://i1.s2.dpfile.com/pc/mc/c5539bd21f77f1e72959e1e88f2f68b6(80x50)/thumb.jpg",
+	"count": "18939",
+	"price": "¥98",
+	"oldPrice": "¥282"
+},
+{
+	"restaurant": "许留山",
+	"dataHref": "http://t.dianping.com/deal/6219455",
+	"picture": "http://i1.s2.dpfile.com/pc/mc/110557b00334ccd3aed96043df1bcf43(80x50)/thumb.jpg",
+	"count": "19158",
+	"price": "¥22",
+	"oldPrice": "¥40"
+}]

@@ -1,0 +1,77 @@
+[{
+	"index": "0",
+	"restaurant": "72街（盈丰店）",
+	"dataHref": "http://r.ele.me/gd-72yfd",
+	"weita": "false",
+	"flavor": "中式",
+	"logo": "http://fuss10.elemecdn.com/1/76/f33c29007a2918e5bd45a943cc1f6jpeg_size_42_42.jpeg",
+	"deliverTime": "36",
+	"ratingStar": "4.2",
+	"ratingNumber": "35",
+	"open": {
+		"hour": "10",
+		"min": "30"
+	},
+	"close": {
+		"hour": "20",
+		"min": "0"
+	},
+	"openM": {
+		"hour": "",
+		"min": ""
+	},
+	"closeM": {
+		"hour": "",
+		"min": ""
+	},
+	"invoice": "true",
+	"onlinePay": "false",
+	"compensate": "",
+	"lowest": "20",
+	"extra": "",
+	"intro": "72街：味道重一点。",
+	"address": "天河区华强路2号富力盈丰大厦首层120号铺",
+	"notice": "",
+    "receiveOrder": "true",
+    "packingFee": "",
+    "reserve": "false"
+},
+{
+	"index": "1",
+	"restaurant": "尊宝比萨（名门店）",
+	"dataHref": "http://r.ele.me/gd-zbbsmmd",
+	"weita": "false",
+	"flavor": "中式,西式",
+	"logo": "http://fuss10.elemecdn.com/4/50/eb198b55815d79c0f45cbb922ee5fpng_size_42_42.png",
+	"deliverTime": "",
+	"ratingStar": "3.0",
+	"ratingNumber": "",
+	"open": {
+		"hour": "9",
+		"min": "0"
+	},
+	"close": {
+		"hour": "22",
+		"min": "0"
+	},
+	"openM": {
+		"hour": "",
+		"min": ""
+	},
+	"closeM": {
+		"hour": "",
+		"min": ""
+	},
+	"invoice": "",
+	"onlinePay": "false",
+	"compensate": "",
+	"lowest": "30",
+	"extra": "",
+	"intro": "尊宝比萨：广州1/3杂志广州区域“广州比萨王”评比冠军！",
+	"address": "珠江新城花城大道2号首层50号铺",
+	"notice": "该餐厅当前只支持电话订餐，选择美食后可以查看餐厅电话",
+    "receiveOrder": "true",
+    "packingFee": "3",
+    "reserve": "false",
+    "phone": "true"
+}]

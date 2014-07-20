@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="lt-ie9" lang="zh"> <![endif]-->
+<!--[if IE 9 ]>        <html class="lt-ie10 ie9" lang="zh"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="zh">
+<!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
+	<script type="text/javascript" src="js/device.js"></script>
+	<script type="text/javascript">
+		if (!window.platform.isDesktop) {
+			window.location.href = "http://m.ele.me/";
+		};
+	</script>
+	<meta charset="utf-8">
+	<title>广州市G餐厅附近的外卖饭店、餐厅 – 叫外卖上ele.me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="loading">
+	<div class="background night">
+		<div class="bg-sun"></div>
+		<div class="bg-moon"></div>
+		<div class="bg-clouds">
+			<img class="cloud-piece cloud-piece1" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece2" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece3" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece4" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece5" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece6" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece7" src="images/clouds.png" alt=""></img>
+			<img class="cloud-piece cloud-piece8" src="images/clouds.png" alt=""></img>
+		</div>
+		<div class="bg-stars">
+			<div class="star-type star-type1-big" data-type="1-big"></div>
+			<div class="star-type star-type1-normal" data-type="1-normal"></div>
+			<div class="star-type star-type1-small" data-type="1-small"></div>
+
+			<div class="star-type star-type2-big" data-type="2-big"></div>
+			<div class="star-type star-type2-normal" data-type="2-normal"></div>
+			<div class="star-type star-type2-small" data-type="2-small"></div>
+		</div>
+	</div>
+
+	<div class="content-wrapper night">
+		<header class="topbar">
+			<div class="container clearfix">
+				<a class="logo" href="#" title="饿了么" alt="饿了么"></a>
+				<a class="m-apps" href="/mobile" target="_blank">
+					<div class="icon-mobile"></div>手机客户端
+				</a>
+				<div class="tsearch">
+					<form id="tsearch-form" class="tsearch-form clearfix" action="/search" method="get">
+						<div class="icon-tsearch"></div>
+						<input id="tsearch-input" class="tsearch-input" type="text" name="kw" autocomplete="off" placeholder="搜索餐厅，美食..."></input>
+						<div id="ts-loading" class="ts-loading hide"></div>
+						<div id="ts-clear" class="ts-clear hide"></div>		
+					</form>
+					<div id="tsearch-autocomplete" class="tsearch-autocomplete"></div>
+				</div>
+				<nav clearfix>
+					<ul class="nav-site clearfix">
+						<li>
+							<a href="/profile/order">我的饿单</a>
+						</li>
+						<li>
+							<a href="/gift">礼品中心</a>
+						</li>
+						<li>
+							<a href="/feedback">反馈留言</a>
+						</li>
+						<li>
+							<a href="http://t.dianping.com/home?latitude=23.122541&longitude=113.323575&distance=500">附近团购</a>
+						</li>
+					</ul>
+
+					<div id="topbar-cart" class="eleme-dropdown topbar-widget topbar-cart empty">
+				        <a class="e-toggle twidget-toggle">
+				          	<span id="tcart-total" class="tcart-total twidget-total">0</span>
+				          	<i class="icon-tcart"></i>
+				        </a>
+				        <div class="e-dropdown twidget-dropdown">
+				          	<div id="tcart-loading" class="twidget-loading"></div>
+				          	<div id="tcart-wrapper"></div>
+				        </div>
+				    </div>
+
+				    <div class="topbar-user-nav tnav-link">
+				        <a href="/login">登录</a> /
+				        <a href="/register">注册</a>
+				    </div>
+				</nav>
+			</div>
+		</header>
+
+		<div class="main-container">
+			<nav class="address">G餐厅
+				<a class="address-switch" href="/?force=1">[切换地址]</a>
+			</nav>
+
+			<div id="promotion" class="banner"></div>
+
+			<div class="collect-restaurants">
+				<div class="restaurant-header">
+					<span>我的收藏</span>
+					<a href="/profile/favor_restaurant">设置</a>
+				</div>
+				<div class="my-restaurants clearfix">
+					<div class="my-restaurant"></div>
+					<div class="my-restaurant"></div>
+					<div class="my-restaurant"></div>
+					<div class="my-restaurant"></div>
+					<div class="my-restaurant"></div>
+				</div>
+			</div>
+
+			<div class="more-restaurants">
+				<div class="restaurant-header">
+					<a target="_blank" class="goto" href="http://ele.me/premium/psn/239e7ddb2164">前往品牌馆</a>
+					<a target="_blank" class="more" href="http://ele.me/premium/psn/239e7ddb2164">查看<span>0</span>家品牌餐厅</a>
+				</div>
+				<div class="my-restaurants clearfix">
+				</div>
+			</div>
+
+			<div class="restaurants">
+				<div class="restaurant-header">
+					<span class="check-btn checked">
+						<input type="checkbox" name="check" value="tuijian" checked="checked">
+						<span class="check-text tuijian">热门餐厅</span>
+					</span>
+					<span class="check-btn">
+						<input type="checkbox" name="check" value="open">
+						<span class="check-text open">营业中</span>
+					</span>
+					<span class="divider"></span>
+					<span class="check-btn">
+						<input type="checkbox" name="check" value="online-pay">
+						<span class="check-text online-pay icon-new">在线支付
+						<span class="icon"></span>
+						</span>
+					</span>
+					<span class="check-btn">
+						<input type="checkbox" name="check" value="weita">
+						<span class="check-text activity">满59元送维他柠檬茶一组活动（V）</span>
+					</span>
+					<span class="divider"></span>
+					<div class="flavor" pinyin="all">
+						<a>
+							<span class="hanzi">口味</span>
+							<b class="caret"></b>
+						</a>
+						<ul class="flavor-menu">
+							<li class="all">
+								<a>全部</a>
+							</li>
+							<li class="zhongshi">
+								<a>中式</a>
+							</li>
+							<li class="xishi">
+								<a>西式</a>
+							</li>
+							<li class="gangshi">
+								<a>港式</a>
+							</li>
+							<li class="naicha">
+								<a>奶茶</a>
+							</li>
+							<li class="rishi">
+								<a>日式</a>
+							</li>
+							<li class="hanshi">
+								<a>韩式</a>
+							</li>
+							<li class="tiandian">
+								<a>甜点</a>
+							</li>
+							<li class="hanbao">
+								<a>汉堡</a>
+							</li>
+							<li class="qingzhen">
+								<a>清真</a>
+							</li>
+						</ul>
+					</div>
+					<div class="deliver-slider-wrapper" level="level-all">
+						<span class="deliver-level">全部</span>
+						<div class="slider-wrapper">
+							<div class="total">
+								<div class="actual"></div>
+								<div class="point"></div>
+							</div>
+						</div>
+						<span>起送价</span>
+					</div>
+				</div>
+				<div class="my-restaurants clearfix">
+
+				<!-- <a class="my-restaurant" target="_blank" href="">
+					<div class="box">
+						<div class="logo-wrapper">
+							<div class="logo" href="">
+								<img src="http://fuss10.elemecdn.com/9/40/1af86d3bd32d4bebee05b010114c9jpeg_size_42_42.jpeg" alt="" />
+							</div>
+							<div class="deliver-time"><span>44</span>分钟</div>
+						</div>
+						<div class="right">
+							<div class="name">皇鹏烧鹅仔（珠江新城店）</div>
+							<div class="flavor">中式</div>
+							<div class="staus">
+								<span>休息中</span>
+							</div>
+							<div class="staus-info">
+								<span>已打烊</span>
+							</div>
+							<div class="rating">
+								<div class="rating-star r7"></div>
+								<span class="rating-number">95<span>订单</span></span>
+							</div>
+							<div class="icons">
+								<img class="icon" src="http://fuss10.elemecdn.com/3/ea/060c294de2d291c59c87357315111png.png" />
+								<span class="icon invoice"></span>
+							</div>
+							<div class="book">
+								<div class="add">收藏</div>
+								<div class="unadd hide">取消收藏</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="more-info">
+						<div class="name">新味力</div>
+						<p class="receive">不支持订单</p>
+						<p class="info">已打烊</p>
+						<div class="divider"></div>
+						<ul class="icons">
+							<li class="online-pay">
+								<span class="icon online-pay"></span>
+								<span class="desc">该餐厅支持在线支付</span>
+							</li>
+						</ul>
+						<p class="notice">
+							<strong>公告：</strong>
+							来顶啊！！！
+						</p>
+						<p class="low">
+							<strong>起送价：</strong>
+							到<span class="where">G餐厅</span><span class="lowest">40</span>元。<span class="extra">（额外说明：）</span>
+						</p>
+						<p class="address">
+							<strong>地址：</strong>
+							天河体育馆
+						</p>
+						<p class="open-time">
+							<strong>营业时间：</strong>
+							8:00-21:00
+						</p>
+						<p class="intro">
+							<strong>简介：</strong>
+							9999
+						</p>
+					</div>
+				</a> -->
+				</div>
+			</div>
+
+			<div class="activity clearfix">
+				<a class="hot-food" target="_blank" href="http://ele.me/entry/findhotfood">
+					<img src="http://fuss10.elemecdn.com/f/fb/4f1385094a51bc1816c65b3ea6da9gif.gif" alt="" />
+				</a>
+				<a class="order-flow" target="_blank" href="http://ele.me/31265430">
+					<img src="http://fuss10.elemecdn.com/9/34/ca212e55bbfb137346e429de97fb8gif.gif" alt="" />
+				</a>
+				<a class="mobile-app" target="_blank" href="http://ele.me/mobile">
+					<img src="http://fuss10.elemecdn.com/5/bb/fe03c44f1fab3448d2df24625da50gif.gif	" alt="" />
+				</a>
+				<a class="who">
+					<img src="http://fuss10.elemecdn.com/0/d1/0728055c786e1f250b783a0386a34gif.gif" alt="" />
+				</a>
+				<a class="help" target="_blank" href="http://ele.me/help">
+					<img src="http://fuss10.elemecdn.com/0/34/4dfa08f216bf0bf39978f3d193855gif.gif" alt="" />
+				</a>
+			</div>
+
+			<div class="near-restaurants">
+				<div class="restaurant-header">
+					<span>附近团购</span>
+				</div>
+				<div class="my-restaurants clearfix">
+					<!-- <div class="my-restaurant" data-href="http://t.dianping.com/deal/6244272">
+						<div class="picture">
+							<img src="http://i1.s2.dpfile.com/pc/mc/03ede3f97f230feea9b84a616bbd5204(80x50)/thumb.jpg" title="万岁寿司·料理" alt="" />
+							<div class="count"><span>30088</span>人购买</div>
+						</div>
+						<div class="right">
+							<h4 class="restaurant">万岁寿司·料理</h4>
+							<em class="price">¥76</em>
+							<em class="old-price">¥100</em>
+							<div class="btn">立即抢购</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			<div class="more-and-more">
+				<div class="restaurant-header">
+					<span>更多餐厅</span>
+				</div>
+				<div class="my-restaurants clearfix">
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<ul class="site-link">
+				<li>
+					<a href="http://kaidian.ele.me/">我要开店</a>
+				</li>
+				<li>
+					<a href="http://ele.me/about/contact">联系我们</a>
+				</li>
+				<li>
+					<a href="http://ele.me/about/agreement">服务条款和协议</a>
+				</li>
+				<li>
+					<a href="http://ele.me/sitemap">站点地图</a>
+				</li>
+				<li>
+					<a href="http://jobs.ele.me/">加入我们</a>
+				</li>
+			</ul>
+			<p class="copyright">Copyright ©2008-2014 ele.me, All Rights Reserved.</p>
+			<p>
+			    <a class="sfooter-cert clearfix" target="_blank" href="http://www.miibeian.gov.cn">
+			      	<i class="icon-icp"></i>
+			      	<span class="sfooter-crt-info">沪ICP备<br />09007032</span>
+			    </a>
+			    <a class="sfooter-cert clearfix" target="_blank" href='http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120305173227823'>
+			      	<i class="icon-aic"></i>
+			      	<span class="sfooter-crt-info">上海工商<br />行政管理</span>
+			    </a>
+			</p>
+		</footer>
+
+		<div class="site-fixed">
+			<a class="back-top" title="回顶部">
+				<i></i>
+			</a>
+			<div class="wechat">
+				<i></i>
+				<img class="d-code" src="http://static10.elemecdn.com/images/forward/global/app-qrcode.png">
+			</div>
+		</div>
+	</div>
+	<div class="g-game hidden scale">
+		<div class="c-game">
+			<div class="close-game icon-close"></div>
+		</div>
+	</div>
+	
+
+	<div class="load">
+		<span>loading...</span>
+		<div class="srip middlefix">
+			<div class="container"></div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/promotion.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

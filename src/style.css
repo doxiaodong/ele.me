@@ -1,0 +1,1710 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body,
+div,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  display: block;
+  border: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+.clear_both {
+  clear: both;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.middlefix {
+  font-size: 0;
+}
+.middlefix:after {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.clearfix {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+a:active,
+a:focus,
+input {
+  outline: 0;
+  outline-style: none;
+  outline-width: 0;
+}
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+  background-color: #fff;
+}
+.scale .c-game {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.g-game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.g-game .c-game {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  background-clip: padding-box;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60%;
+  height: 81%;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .g-game .c-game {
+    width: 100%;
+  }
+}
+.g-game .c-game .close-game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.g-game .c-game .close-game:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.g-game .c-game canvas {
+  cursor: text;
+  margin-top: 70px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+@media screen and (max-width: 1270px) {
+  .g-game .c-game canvas {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .g-game .c-game canvas {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 790px) {
+  .g-game .c-game canvas {
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .g-game .c-game canvas {
+    margin-right: 32px;
+    margin-left: 32px;
+  }
+}
+@media screen and (max-width: 660px) {
+  .g-game .c-game canvas {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 535px) {
+  .g-game .c-game canvas {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .g-game .c-game canvas {
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+}
+@media screen and (max-height: 550px) {
+  .g-game .c-game canvas {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .g-game .c-game canvas {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-height: 440px) {
+  .g-game .c-game canvas {
+    margin-top: 45px;
+  }
+}
+@media screen and (max-height: 390px) {
+  .g-game .c-game canvas {
+    margin-top: 35px;
+  }
+}
+.loading {
+  overflow: hidden;
+}
+.loading > * {
+  visibility: hidden;
+}
+.load {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.load .srip {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.load .srip .container {
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -o-transform: translateY(40px);
+  transform: translateY(40px);
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 10px;
+  background: #523A3A;
+}
+.loading .load {
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #C0DEED;
+  visibility: visible;
+}
+.loading .load span {
+  position: absolute;
+  font-size: 40px;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.background {
+  z-index: -999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url(images/background.jpg);
+  background-repeat: repeat-x;
+  background-position: 1px -9999px;
+}
+.background.day {
+  background: #C0DEED;
+}
+.background.day .bg-sun,
+.background.night .bg-stars,
+.background.night .bg-moon {
+  visibility: visible;
+}
+.background.night .bg-sun,
+.background.day .bg-stars,
+.background.day .bg-moon {
+  visibility: hidden;
+}
+.background .bg-sun,
+.background .bg-moon,
+.background .bg-clouds,
+.background .bg-stars {
+  position: absolute;
+  z-index: -99;
+}
+.background .bg-sun {
+  left: 0;
+  width: 445px;
+  height: 356px;
+  background: url(images/clouds.png) no-repeat -660px -350px;
+}
+.background .bg-moon {
+  right: 0;
+  width: 274px;
+  height: 251px;
+  background: url(images/clouds.png) no-repeat -395px -430px;
+}
+.background .bg-clouds .cloud-piece {
+  position: absolute;
+  z-index: -99;
+}
+.background .bg-clouds .cloud-piece1 {
+  top: 220px;
+  left: -10px;
+  clip: rect(0, 296px, 190px, 0);
+}
+.background .bg-clouds .cloud-piece2 {
+  top: 450px;
+  left: -290px;
+  clip: rect(0, 515px, 144px, 300px);
+}
+.background .bg-clouds .cloud-piece3 {
+  top: 600px;
+  right: -300px;
+  clip: rect(0, 810px, 222px, 515px);
+}
+.background .bg-clouds .cloud-piece4 {
+  top: 460px;
+  right: 15px;
+  clip: rect(0, 1085px, 144px, 810px);
+}
+.background .bg-clouds .cloud-piece5 {
+  top: 420px;
+  left: -370px;
+  clip: rect(222px, 665px, 430px, 382px);
+}
+.background .bg-clouds .cloud-piece6 {
+  top: 50px;
+  left: 620px;
+  clip: rect(222px, 870px, 360px, 672px);
+}
+.background .bg-clouds .cloud-piece7 {
+  top: -120px;
+  left: -110px;
+  clip: rect(195px, 385px, 415px, 0);
+}
+.background .bg-clouds .cloud-piece8 {
+  top: 70px;
+  left: 520px;
+  clip: rect(222px, 1078px, 360px, 878px);
+}
+.background .bg-stars {
+  width: 100%;
+}
+.background .bg-stars .bg-star {
+  position: absolute;
+}
+.background .bg-stars .star-type1-big .bg-star {
+  width: 26px;
+  height: 32px;
+  background: url(images/stars1-1.png);
+}
+.background .bg-stars .star-type1-big .star1-big-1 {
+  left: 50px;
+  top: 650px;
+}
+.background .bg-stars .star-type1-big .star1-big-2 {
+  left: 100px;
+  top: 300px;
+}
+.background .bg-stars .star-type1-big .star1-big-3 {
+  left: 200px;
+  top: 450px;
+}
+.background .bg-stars .star-type1-big .star1-big-4 {
+  right: 50px;
+  top: 350px;
+}
+.background .bg-stars .star-type1-normal .bg-star {
+  width: 18px;
+  height: 22px;
+  background: url(images/stars1-2.png);
+}
+.background .bg-stars .star-type1-normal .star1-normal-1 {
+  left: 30px;
+  top: 900px;
+}
+.background .bg-stars .star-type1-normal .star1-normal-2 {
+  left: 90px;
+  top: 750px;
+}
+.background .bg-stars .star-type1-normal .star1-normal-3 {
+  left: 130px;
+  top: 150px;
+}
+.background .bg-stars .star-type1-normal .star1-normal-4 {
+  right: 170px;
+  top: 620px;
+}
+.background .bg-stars .star-type1-normal .star1-normal-5 {
+  right: 30px;
+  top: 250px;
+}
+.background .bg-stars .star-type1-normal .star1-normal-6 {
+  right: 200px;
+  top: 470px;
+}
+.background .bg-stars .star-type1-small .bg-star {
+  width: 10px;
+  height: 12px;
+  background: url(images/stars1-3.png);
+}
+.background .bg-stars .star-type1-small .star1-small-1 {
+  left: 80px;
+  top: 800px;
+}
+.background .bg-stars .star-type1-small .star1-small-2 {
+  left: 180px;
+  top: 350px;
+}
+.background .bg-stars .star-type1-small .star1-small-3 {
+  left: 220px;
+  top: 50px;
+}
+.background .bg-stars .star-type1-small .star1-small-4 {
+  right: 160px;
+  top: 670px;
+}
+.background .bg-stars .star-type1-small .star1-small-5 {
+  right: 90px;
+  top: 150px;
+}
+.background .bg-stars .star-type1-small .star1-small-6 {
+  right: 140px;
+  top: 330px;
+}
+.background .bg-stars .star-type2-big .bg-star {
+  width: 34px;
+  height: 32px;
+  background: url(images/stars2-1.png);
+}
+.background .bg-stars .star-type2-big .star2-big-1 {
+  left: 150px;
+  top: 450px;
+}
+.background .bg-stars .star-type2-big .star2-big-2 {
+  left: 230px;
+  top: 220px;
+}
+.background .bg-stars .star-type2-big .star2-big-3 {
+  left: 80px;
+  top: 410px;
+}
+.background .bg-stars .star-type2-big .star2-big-4 {
+  right: 250px;
+  top: 750px;
+}
+.background .bg-stars .star-type2-normal .bg-star {
+  width: 23px;
+  height: 23px;
+  background: url(images/stars2-2.png);
+}
+.background .bg-stars .star-type2-normal .star2-normal-1 {
+  left: 30px;
+  top: 830px;
+}
+.background .bg-stars .star-type2-normal .star2-normal-2 {
+  left: 190px;
+  top: 350px;
+}
+.background .bg-stars .star-type2-normal .star2-normal-3 {
+  left: 230px;
+  top: 550px;
+}
+.background .bg-stars .star-type2-normal .star2-normal-4 {
+  right: 170px;
+  top: 920px;
+}
+.background .bg-stars .star-type2-normal .star2-normal-5 {
+  right: 90px;
+  top: 450px;
+}
+.background .bg-stars .star-type2-normal .star2-normal-6 {
+  right: 270px;
+  top: 370px;
+}
+.background .bg-stars .star-type2-small .bg-star {
+  width: 14px;
+  height: 13px;
+  background: url(images/stars2-3.png);
+}
+.background .bg-stars .star-type2-small .star2-small-1 {
+  left: 30px;
+  top: 740px;
+}
+.background .bg-stars .star-type2-small .star2-small-2 {
+  left: 60px;
+  top: 250px;
+}
+.background .bg-stars .star-type2-small .star2-small-3 {
+  left: 100px;
+  top: 80px;
+}
+.background .bg-stars .star-type2-small .star2-small-4 {
+  right: 230px;
+  top: 370px;
+}
+.background .bg-stars .star-type2-small .star2-small-5 {
+  right: 160px;
+  top: 190px;
+}
+.background .bg-stars .star-type2-small .star2-small-6 {
+  right: 300px;
+  top: 270px;
+}
+.hide {
+  display: none;
+}
+.content-wrapper .topbar {
+  position: fixed;
+  z-index: 99999999;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: #222;
+  background-image: -webkit-linear-gradient(270deg, #262626, #1a1a1a);
+  background-image: linear-gradient(180deg, #262626, #1a1a1a);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font-family: "Helvetica Neue", Arial, "Microsoft Yahei", sans-serif;
+}
+.content-wrapper .topbar .container {
+  width: 950px;
+  height: 100%;
+  margin: 0 auto;
+}
+.content-wrapper .topbar .container .logo,
+.content-wrapper .topbar .container .m-apps {
+  display: block;
+  float: left;
+}
+.content-wrapper .topbar .container .logo {
+  margin-right: 10px;
+  width: 90px;
+  height: 100%;
+  background: url(images/topbar.png) no-repeat transparent 0 0;
+}
+.content-wrapper .topbar .container .m-apps {
+  margin: 8px 15px 0 0;
+  width: 82px;
+  height: 24px;
+  border-radius: 3px;
+  background: #2d2d2d;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: #ababab;
+}
+.content-wrapper .topbar .container .m-apps .icon-mobile {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 6px;
+  width: 9px;
+  height: 14px;
+  background: url(images/topbar.png) no-repeat transparent 0 -40px;
+}
+.content-wrapper .topbar .container .tsearch {
+  float: left;
+  margin-top: 7px;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form.focus {
+  background: white;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form {
+  width: 200px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 26px;
+  border: 1px solid #141414;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 0 #2a2a2a;
+  background: #4e4e4e;
+  padding: 3px 6px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form .icon-tsearch,
+.content-wrapper .topbar .container .tsearch .tsearch-form .ts-loading,
+.content-wrapper .topbar .container .tsearch .tsearch-form .ts-clear {
+  float: right;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form .ts-loading {
+  background: url(images/topbar-search-loading.gif) no-repeat center;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form .ts-clear {
+  cursor: pointer;
+  background: url(images/topbar.png) no-repeat transparent -40px -60px;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form .icon-tsearch {
+  float: left;
+  margin-right: 5px;
+  background: url(images/topbar.png) no-repeat transparent 0 -60px;
+}
+.content-wrapper .topbar .container .tsearch .tsearch-form input {
+  float: left;
+  width: 143px;
+  height: 18px;
+  font-size: 12px;
+  color: #222;
+  padding: 0;
+  border: 0;
+  background: 0;
+  line-height: 16px;
+}
+.content-wrapper .topbar .container nav {
+  float: right;
+}
+.content-wrapper .topbar .container nav .nav-site {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+.content-wrapper .topbar .container nav .nav-site li {
+  float: left;
+}
+.content-wrapper .topbar .container nav .nav-site li a {
+  display: block;
+  height: 40px;
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 40px;
+}
+.content-wrapper .topbar .container nav .nav-site::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 13px;
+  display: block;
+  width: 1px;
+  height: 14px;
+  background: #2e2e2e;
+  z-index: 99;
+}
+.content-wrapper .topbar .container nav .topbar-widget {
+  position: relative;
+  cursor: pointer;
+  float: left;
+  font-size: 13px;
+  color: #222;
+}
+.content-wrapper .topbar .container nav .topbar-widget .twidget-toggle {
+  padding: 10px;
+  position: relative;
+  display: block;
+}
+.content-wrapper .topbar .container nav .topbar-widget .twidget-toggle span {
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  padding: 1px;
+  min-width: 10px;
+  border-radius: 6px;
+  background-color: #dd5401;
+  color: white;
+  font: normal 10px/10px arial, sans-serif;
+  text-align: center;
+}
+.content-wrapper .topbar .container nav .topbar-widget .twidget-toggle i {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(images/topbar.png) no-repeat transparent 0 -80px;
+}
+.content-wrapper .topbar .container nav .topbar-widget .twidget-dropdown {
+  position: absolute;
+  display: none;
+  top: 37px;
+  right: -13px;
+  padding-top: 3px;
+  width: 280px;
+  background: white;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+.content-wrapper .topbar .container nav .topbar-widget .twidget-dropdown .twidget-loading {
+  display: none;
+  height: 50px;
+  padding: 12px 0;
+  background: url(images/gif-eleme-loader.gif) no-repeat center;
+}
+.content-wrapper .topbar .container nav .topbar-user-nav {
+  float: left;
+  margin-left: 10px;
+  display: block;
+  height: 40px;
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 40px;
+}
+.content-wrapper .topbar .container nav .topbar-user-nav a {
+  color: #ccc;
+}
+.content-wrapper.day .main-container {
+  color: #0088c8;
+}
+.content-wrapper.day .main-container a {
+  color: #08c;
+}
+.content-wrapper.night .main-container,
+.content-wrapper.night .main-container a {
+  color: white;
+}
+.content-wrapper .main-container {
+  width: 950px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.content-wrapper .main-container .address {
+  margin: 5px 0 10px;
+}
+.content-wrapper .main-container .address a {
+  margin-left: 8px;
+}
+.content-wrapper .main-container .address a:hover {
+  text-decoration: underline;
+}
+.content-wrapper .main-container .banner {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.content-wrapper .main-container .banner ul {
+  position: absolute;
+}
+.content-wrapper .main-container .banner ol {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+.content-wrapper .main-container .banner ol .number {
+  float: left;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+  margin-right: 5px;
+}
+.content-wrapper .main-container .banner ol .selected {
+  background-color: rgba(255, 102, 0, 0.8);
+  color: white;
+  font-weight: bold;
+}
+.content-wrapper .main-container .restaurant-header {
+  background-color: #fbfbfb;
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(top, #ffffff, #f5f5f5);
+  background-repeat: repeat-x;
+  margin-bottom: 0;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+}
+.content-wrapper .main-container .my-restaurants {
+  background: #fff;
+}
+.content-wrapper .main-container .collect-restaurants,
+.content-wrapper .main-container .more-restaurants,
+.content-wrapper .main-container .restaurants,
+.content-wrapper .main-container .near-restaurants,
+.content-wrapper .main-container .more-and-more {
+  margin-bottom: 15px;
+}
+.content-wrapper .main-container .collect-restaurants .restaurant-header span {
+  margin-left: 10px;
+}
+.content-wrapper .main-container .collect-restaurants .restaurant-header a {
+  color: #999;
+  float: right;
+  margin-right: 10px;
+}
+.content-wrapper .main-container .collect-restaurants .restaurant-header a:hover {
+  color: #0088c8;
+  text-decoration: underline;
+}
+.content-wrapper .main-container .collect-restaurants .my-restaurants .my-restaurant {
+  width: 189px;
+  height: 92px;
+  border-right: solid 1px #ccc;
+  float: left;
+  cursor: pointer;
+  background: url(images/bg.gif) no-repeat -112px -94px;
+  text-align: left;
+  padding-top: 0;
+}
+.content-wrapper .main-container .collect-restaurants .my-restaurants .my-restaurant:hover {
+  background: url(images/bg.gif) no-repeat -303px -94px;
+}
+.content-wrapper .main-container .my-restaurants .my-restaurant {
+  width: 189px;
+  height: 92px;
+  border-right: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  float: left;
+  cursor: pointer;
+}
+.content-wrapper .main-container .more-restaurants .restaurant-header .goto:hover,
+.content-wrapper .main-container .more-restaurants .restaurant-header .more:hover {
+  text-decoration: underline;
+}
+.content-wrapper .main-container .more-restaurants .restaurant-header .goto {
+  position: relative;
+  height: 22px;
+  padding: 0 6px 0 6px;
+  border-radius: 2px;
+  background: #0c9efc;
+  color: white;
+  font-size: 16px;
+  margin-left: 1px;
+}
+.content-wrapper .main-container .more-restaurants .restaurant-header .more {
+  color: #333;
+  line-height: 30px;
+}
+.content-wrapper .main-container .more-restaurants .restaurant-header .more span {
+  padding: 0 3px;
+  color: #fe6000;
+  font: normal 20px/1em Arial, 'Helvetica Neue', sans-serif;
+}
+.content-wrapper .main-container .restaurants .restaurant-header {
+  height: 41px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header > span {
+  float: left;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .check-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  line-height: 40px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .check-btn input {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 12px;
+  height: 12px;
+  margin-right: -2px;
+  margin-top: 1px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .check-btn .check-text {
+  vertical-align: middle;
+  position: relative;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .check-btn .check-text .icon {
+  position: absolute;
+  top: -17px;
+  left: 5px;
+  height: 17px;
+  width: 31px;
+  background: url(images/pRst-sprites.png) no-repeat transparent 0 -330px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .divider {
+  margin-top: 6px;
+  margin-left: 10px;
+  display: block;
+  width: 3px;
+  height: 32px;
+  background: url(images/divider.gif);
+}
+.content-wrapper .main-container .restaurants .restaurant-header .flavor {
+  width: 59px;
+  height: 41px;
+  cursor: pointer;
+  float: left;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .flavor a {
+  color: #333;
+  vertical-align: middle;
+  padding-left: 18px;
+  line-height: 40px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .flavor a .caret {
+  font-size: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #666;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .flavor .flavor-menu {
+  z-index: 999;
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  width: 59px;
+  margin-top: 1px;
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  overflow: hidden;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .flavor .flavor-menu li:hover {
+  background: #7ab0d4;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper span {
+  float: right;
+  margin: 5px 10px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper .deliver-level {
+  width: 58px;
+  text-align: center;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper .slider-wrapper {
+  float: right;
+  width: 130px;
+  height: 20px;
+  margin-top: 15px;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper .slider-wrapper .total {
+  position: relative;
+  height: 12px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(270deg, #fefefe, #f5f5f5);
+  background-image: linear-gradient(180deg, #fefefe, #f5f5f5);
+  box-shadow: 0 1px 1px #d9d9d9 inset, 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper .slider-wrapper .total .actual {
+  border-radius: 6px;
+  background: #8bbedd;
+  box-shadow: 0 1px 1px #739db5 inset;
+  height: 12px;
+  overflow: hidden;
+}
+.content-wrapper .main-container .restaurants .restaurant-header .deliver-slider-wrapper .slider-wrapper .total .point {
+  position: absolute;
+  top: -5px;
+  left: 120px;
+  margin-left: -8px;
+  width: 22px;
+  height: 26px;
+  background: url(images/global-sprites.png) no-repeat -170px 0;
+  border: 0;
+}
+.content-wrapper .main-container .activity {
+  cursor: pointer;
+  margin: 30px 0;
+}
+.content-wrapper .main-container .activity a {
+  float: left;
+  display: block;
+  width: 150px;
+  height: 93px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.content-wrapper .main-container .activity a + a {
+  margin-left: 50px;
+}
+.content-wrapper .main-container .near-restaurants span {
+  margin-left: 10px;
+}
+.content-wrapper .main-container .more-and-more .restaurant-header span {
+  margin-left: 10px;
+}
+.content-wrapper footer {
+  margin: 30px 0 20px;
+  color: #777;
+  font-family: "Helvetica Neue", Arial, "Microsoft Yahei", sans-serif;
+}
+.content-wrapper footer .site-link {
+  display: block;
+  margin: 0 0 10px;
+  text-align: center;
+}
+.content-wrapper footer .site-link li {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 1em;
+}
+.content-wrapper footer .site-link li + li {
+  border-left: 1px solid #777;
+}
+.content-wrapper footer .copyright {
+  text-align: center;
+  margin: 0 0 15px;
+  font-size: 13px;
+  line-height: 18px;
+}
+.content-wrapper footer p {
+  text-align: center;
+  margin: 0 0 15px;
+}
+.content-wrapper footer p .sfooter-cert + .sfooter-cert {
+  border-left: 1px solid #bbb;
+}
+.content-wrapper footer p .sfooter-cert {
+  display: inline-block;
+  margin-left: -2px;
+  padding: 0 20px;
+  text-align: left;
+}
+.content-wrapper footer p .sfooter-cert i {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+}
+.content-wrapper footer p .sfooter-cert .icon-icp {
+  background: url(images/global-sprites.png) no-repeat 0 0;
+}
+.content-wrapper footer p .sfooter-cert .icon-aic {
+  background: url(images/global-sprites.png) no-repeat -40px 0;
+}
+.content-wrapper footer p .sfooter-cert .sfooter-crt-info {
+  float: left;
+  font-size: 12px;
+  line-height: 14px;
+  color: #666;
+}
+.night footer li a {
+  color: white;
+}
+.day footer li a {
+  color: #08c;
+}
+.site-fixed {
+  position: fixed;
+  z-index: 999999;
+  right: 10px;
+  bottom: 20%;
+  width: 48px;
+  height: 101px;
+}
+.site-fixed .back-top,
+.site-fixed .wechat {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+.site-fixed .back-top {
+  padding: 17px 11px;
+  margin-bottom: 5px;
+}
+.site-fixed .back-top i {
+  position: absolute;
+  width: 26px;
+  height: 14px;
+  background: url(images/global-sprites.png) no-repeat -120px 0;
+}
+.site-fixed .wechat {
+  cursor: default;
+  padding: 15px;
+  position: relative;
+}
+.site-fixed .wechat i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: url(images/global-sprites.png) no-repeat -150px 0;
+}
+.site-fixed .wechat img {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.site-fixed .back-top:hover,
+.site-fixed .wechat:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.site-fixed .wechat:hover img {
+  visibility: visible;
+}
+.collect-restaurants .my-restaurants .my-restaurant.closed,
+.more-restaurants .my-restaurants .my-restaurant.closed,
+.restaurants .my-restaurants .my-restaurant.closed,
+.more-and-more .my-restaurants .my-restaurant.closed,
+.collect-restaurants .my-restaurants .my-restaurant.busy,
+.more-restaurants .my-restaurants .my-restaurant.busy,
+.restaurants .my-restaurants .my-restaurant.busy,
+.more-and-more .my-restaurants .my-restaurant.busy {
+  background: url(images/restaurant_closed_bg.png);
+}
+.collect-restaurants .my-restaurants .my-restaurant.closed .box .right .flavor,
+.more-restaurants .my-restaurants .my-restaurant.closed .box .right .flavor,
+.restaurants .my-restaurants .my-restaurant.closed .box .right .flavor,
+.more-and-more .my-restaurants .my-restaurant.closed .box .right .flavor,
+.collect-restaurants .my-restaurants .my-restaurant.busy .box .right .flavor,
+.more-restaurants .my-restaurants .my-restaurant.busy .box .right .flavor,
+.restaurants .my-restaurants .my-restaurant.busy .box .right .flavor,
+.more-and-more .my-restaurants .my-restaurant.busy .box .right .flavor,
+.collect-restaurants .my-restaurants .my-restaurant.closed .box .right .rating,
+.more-restaurants .my-restaurants .my-restaurant.closed .box .right .rating,
+.restaurants .my-restaurants .my-restaurant.closed .box .right .rating,
+.more-and-more .my-restaurants .my-restaurant.closed .box .right .rating,
+.collect-restaurants .my-restaurants .my-restaurant.busy .box .right .rating,
+.more-restaurants .my-restaurants .my-restaurant.busy .box .right .rating,
+.restaurants .my-restaurants .my-restaurant.busy .box .right .rating,
+.more-and-more .my-restaurants .my-restaurant.busy .box .right .rating,
+.collect-restaurants .my-restaurants .my-restaurant.closed .box .right .icons,
+.more-restaurants .my-restaurants .my-restaurant.closed .box .right .icons,
+.restaurants .my-restaurants .my-restaurant.closed .box .right .icons,
+.more-and-more .my-restaurants .my-restaurant.closed .box .right .icons,
+.collect-restaurants .my-restaurants .my-restaurant.busy .box .right .icons,
+.more-restaurants .my-restaurants .my-restaurant.busy .box .right .icons,
+.restaurants .my-restaurants .my-restaurant.busy .box .right .icons,
+.more-and-more .my-restaurants .my-restaurant.busy .box .right .icons {
+  visibility: hidden;
+}
+.collect-restaurants .my-restaurants .my-restaurant.closed .box .right .staus,
+.more-restaurants .my-restaurants .my-restaurant.closed .box .right .staus,
+.restaurants .my-restaurants .my-restaurant.closed .box .right .staus,
+.more-and-more .my-restaurants .my-restaurant.closed .box .right .staus,
+.collect-restaurants .my-restaurants .my-restaurant.busy .box .right .staus,
+.more-restaurants .my-restaurants .my-restaurant.busy .box .right .staus,
+.restaurants .my-restaurants .my-restaurant.busy .box .right .staus,
+.more-and-more .my-restaurants .my-restaurant.busy .box .right .staus,
+.collect-restaurants .my-restaurants .my-restaurant.closed .box .right .staus-info,
+.more-restaurants .my-restaurants .my-restaurant.closed .box .right .staus-info,
+.restaurants .my-restaurants .my-restaurant.closed .box .right .staus-info,
+.more-and-more .my-restaurants .my-restaurant.closed .box .right .staus-info,
+.collect-restaurants .my-restaurants .my-restaurant.busy .box .right .staus-info,
+.more-restaurants .my-restaurants .my-restaurant.busy .box .right .staus-info,
+.restaurants .my-restaurants .my-restaurant.busy .box .right .staus-info,
+.more-and-more .my-restaurants .my-restaurant.busy .box .right .staus-info {
+  visibility: visible;
+}
+.collect-restaurants .my-restaurants .my-restaurant.reserve .box .right .staus span,
+.more-restaurants .my-restaurants .my-restaurant.reserve .box .right .staus span,
+.restaurants .my-restaurants .my-restaurant.reserve .box .right .staus span,
+.more-and-more .my-restaurants .my-restaurant.reserve .box .right .staus span {
+  color: #59b170;
+  background: #f8f8ee;
+  border: 1px solid #59b170;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.collect-restaurants .my-restaurants .my-restaurant:hover,
+.more-restaurants .my-restaurants .my-restaurant:hover,
+.restaurants .my-restaurants .my-restaurant:hover,
+.more-and-more .my-restaurants .my-restaurant:hover {
+  background: #f3f3f3;
+}
+.collect-restaurants .my-restaurants .my-restaurant,
+.more-restaurants .my-restaurants .my-restaurant,
+.restaurants .my-restaurants .my-restaurant,
+.more-and-more .my-restaurants .my-restaurant {
+  cursor: default!important;
+  float: left;
+  position: relative;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box,
+.more-restaurants .my-restaurants .my-restaurant .box,
+.restaurants .my-restaurants .my-restaurant .box,
+.more-and-more .my-restaurants .my-restaurant .box {
+  margin: 10px 0;
+  vertical-align: top;
+  overflow: hidden;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper {
+  float: left;
+  margin-left: 10px;
+  line-height: 15px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper .logo {
+  cursor: pointer;
+  height: 42px;
+  width: 42px;
+  border: 1px solid #ddd;
+  padding: 1px;
+  position: relative;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo img,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo img,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo img,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper .logo img {
+  width: 42px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo .phone-logo,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo .phone-logo,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper .logo .phone-logo,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper .logo .phone-logo {
+  position: absolute;
+  z-index: 5;
+  top: 27px;
+  left: 29px;
+  width: 24px;
+  height: 24px;
+  background: url(images/phone-logo.png) no-repeat -4px -1px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time {
+  line-height: 14px;
+  color: #666;
+  font-size: 12px;
+  margin-top: 8px;
+  padding-top: 2px;
+  height: 16px;
+  text-align: center;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time.bgcolor,
+.more-restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time.bgcolor,
+.restaurants .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time.bgcolor,
+.more-and-more .my-restaurants .my-restaurant .box .logo-wrapper .deliver-time.bgcolor {
+  background: #ffe2e2;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right,
+.more-restaurants .my-restaurants .my-restaurant .box .right,
+.restaurants .my-restaurants .my-restaurant .box .right,
+.more-and-more .my-restaurants .my-restaurant .box .right {
+  float: left;
+  margin-left: 8px;
+  margin-right: 7px;
+  width: 118px;
+  overflow: hidden;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .name:hover,
+.more-restaurants .my-restaurants .my-restaurant .box .right .name:hover,
+.restaurants .my-restaurants .my-restaurant .box .right .name:hover,
+.more-and-more .my-restaurants .my-restaurant .box .right .name:hover {
+  text-decoration: underline;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .name,
+.more-restaurants .my-restaurants .my-restaurant .box .right .name,
+.restaurants .my-restaurants .my-restaurant .box .right .name,
+.more-and-more .my-restaurants .my-restaurant .box .right .name {
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+  height: 18px;
+  overflow: hidden;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .flavor,
+.more-restaurants .my-restaurants .my-restaurant .box .right .flavor,
+.restaurants .my-restaurants .my-restaurant .box .right .flavor,
+.more-and-more .my-restaurants .my-restaurant .box .right .flavor {
+  overflow: hidden;
+  color: #666;
+  font-size: 12px;
+  float: left;
+  line-height: 100%;
+  min-width: 10px;
+  height: 12px;
+  margin-top: 4px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus,
+.restaurants .my-restaurants .my-restaurant .box .right .staus,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus,
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus-info {
+  visibility: hidden;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus,
+.restaurants .my-restaurants .my-restaurant .box .right .staus,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus {
+  position: absolute;
+  width: 100%;
+  margin-top: 9px;
+  height: 20px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus span,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus span,
+.restaurants .my-restaurants .my-restaurant .box .right .staus span,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus span {
+  color: #999;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.restaurants .my-restaurants .my-restaurant .box .right .staus-info,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus-info {
+  position: absolute;
+  bottom: 10px;
+  line-height: 14px;
+  font-size: 12px;
+  width: 100%;
+  margin-top: 11px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .staus-info span,
+.more-restaurants .my-restaurants .my-restaurant .box .right .staus-info span,
+.restaurants .my-restaurants .my-restaurant .box .right .staus-info span,
+.more-and-more .my-restaurants .my-restaurant .box .right .staus-info span {
+  color: #999;
+  line-height: 14px;
+  font-size: 12px;
+  width: 100%;
+  margin-top: 11px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating,
+.restaurants .my-restaurants .my-restaurant .box .right .rating,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating {
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+  float: left;
+  width: 100%;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star {
+  float: left;
+  display: inline-block;
+  width: 61px;
+  height: 14px;
+  background: url(images/bg.gif) no-repeat -1px -193px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r0,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r0,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r0,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r0 {
+  background-position: -1px -333px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r1,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r1,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r1,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r1 {
+  background-position: -1px -318px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r2,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r2,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r2,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r2 {
+  background-position: -1px -303px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r3,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r3,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r3,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r3 {
+  background-position: -1px -288px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r4,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r4,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r4,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r4 {
+  background-position: -1px -273px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r5,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r5,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r5,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r5 {
+  background-position: -1px -256px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r6,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r6,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r6,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r6 {
+  background-position: -1px -239px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r7,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r7,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r7,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r7 {
+  background-position: -1px -223px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r8,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r8,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r8,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r8 {
+  background-position: -1px -209px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r9,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r9,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r9,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r9 {
+  background-position: -1px -194px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r10,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r10,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-star.r10,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-star.r10 {
+  background-position: -1px -179px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-number,
+.more-restaurants .my-restaurants .my-restaurant .box .right .rating .rating-number,
+.restaurants .my-restaurants .my-restaurant .box .right .rating .rating-number,
+.more-and-more .my-restaurants .my-restaurant .box .right .rating .rating-number {
+  line-height: 14px;
+  float: left;
+  margin-left: 3px;
+  font-size: 12px;
+  color: #999;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .icons .icon,
+.more-restaurants .my-restaurants .my-restaurant .box .right .icons .icon,
+.restaurants .my-restaurants .my-restaurant .box .right .icons .icon,
+.more-and-more .my-restaurants .my-restaurant .box .right .icons .icon {
+  margin-top: 4px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book,
+.restaurants .my-restaurants .my-restaurant .box .right .book,
+.more-and-more .my-restaurants .my-restaurant .box .right .book {
+  cursor: pointer;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .add:hover,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .add:hover,
+.restaurants .my-restaurants .my-restaurant .box .right .book .add:hover,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .add:hover,
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .unadd:hover,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .unadd:hover,
+.restaurants .my-restaurants .my-restaurant .box .right .book .unadd:hover,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .unadd:hover {
+  text-decoration: underline;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .add,
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .unadd {
+  position: absolute;
+  top: 66px;
+  right: 10px;
+  color: #999;
+  line-height: 15px;
+  padding: 1px 0 0 15px;
+  height: 18px;
+  text-align: right;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.restaurants .my-restaurants .my-restaurant .box .right .book .add,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .add {
+  width: 40px;
+  background: url(images/bg.gif) no-repeat -114px -778px #f8f8f8 !important;
+}
+.collect-restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.more-restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.restaurants .my-restaurants .my-restaurant .box .right .book .unadd,
+.more-and-more .my-restaurants .my-restaurant .box .right .book .unadd {
+  width: 60px;
+  background: url(images/bg.gif) no-repeat -205px -778px #f8f8f8 !important;
+}
+.collect-restaurants .my-restaurants .my-restaurant .icons .icon,
+.more-restaurants .my-restaurants .my-restaurant .icons .icon,
+.restaurants .my-restaurants .my-restaurant .icons .icon,
+.more-and-more .my-restaurants .my-restaurant .icons .icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  float: left;
+  background: url(images/service-icons.png8.png) transparent 0 0 no-repeat;
+}
+.collect-restaurants .my-restaurants .my-restaurant .icons .icon.invoice,
+.more-restaurants .my-restaurants .my-restaurant .icons .icon.invoice,
+.restaurants .my-restaurants .my-restaurant .icons .icon.invoice,
+.more-and-more .my-restaurants .my-restaurant .icons .icon.invoice {
+  background-position: 0 -120px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .icons .icon.online-pay,
+.more-restaurants .my-restaurants .my-restaurant .icons .icon.online-pay,
+.restaurants .my-restaurants .my-restaurant .icons .icon.online-pay,
+.more-and-more .my-restaurants .my-restaurant .icons .icon.online-pay {
+  background-position: 0 -160px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .icons .icon.packing-fee,
+.more-restaurants .my-restaurants .my-restaurant .icons .icon.packing-fee,
+.restaurants .my-restaurants .my-restaurant .icons .icon.packing-fee,
+.more-and-more .my-restaurants .my-restaurant .icons .icon.packing-fee {
+  background-position: 0 -140px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .icons .icon.compensate,
+.more-restaurants .my-restaurants .my-restaurant .icons .icon.compensate,
+.restaurants .my-restaurants .my-restaurant .icons .icon.compensate,
+.more-and-more .my-restaurants .my-restaurant .icons .icon.compensate {
+  background-position: 0 -100px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info,
+.more-restaurants .my-restaurants .my-restaurant .more-info,
+.restaurants .my-restaurants .my-restaurant .more-info,
+.more-and-more .my-restaurants .my-restaurant .more-info {
+  visibility: hidden;
+  position: absolute;
+  top: -10px;
+  width: 370px;
+  background: #ffffe0;
+  z-index: 9999;
+  line-height: 18px;
+  color: #333;
+  border: 1px solid #ccc;
+  box-shadow: 0.1px 0.1px 5px 0.1px black;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .name,
+.more-restaurants .my-restaurants .my-restaurant .more-info .name,
+.restaurants .my-restaurants .my-restaurant .more-info .name,
+.more-and-more .my-restaurants .my-restaurant .more-info .name {
+  font-size: 15px;
+  margin: 20px 0 0 10px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .receive,
+.more-restaurants .my-restaurants .my-restaurant .more-info .receive,
+.restaurants .my-restaurants .my-restaurant .more-info .receive,
+.more-and-more .my-restaurants .my-restaurant .more-info .receive,
+.collect-restaurants .my-restaurants .my-restaurant .more-info .info,
+.more-restaurants .my-restaurants .my-restaurant .more-info .info,
+.restaurants .my-restaurants .my-restaurant .more-info .info,
+.more-and-more .my-restaurants .my-restaurant .more-info .info {
+  margin: 5px 10px;
+  line-height: 150%;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .divider,
+.more-restaurants .my-restaurants .my-restaurant .more-info .divider,
+.restaurants .my-restaurants .my-restaurant .more-info .divider,
+.more-and-more .my-restaurants .my-restaurant .more-info .divider {
+  height: 1px;
+  margin: 10px 10px;
+  overflow: hidden;
+  background-color: #EEE;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .icons,
+.more-restaurants .my-restaurants .my-restaurant .more-info .icons,
+.restaurants .my-restaurants .my-restaurant .more-info .icons,
+.more-and-more .my-restaurants .my-restaurant .more-info .icons {
+  margin: 0 10px;
+  list-style: none;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .icons li,
+.more-restaurants .my-restaurants .my-restaurant .more-info .icons li,
+.restaurants .my-restaurants .my-restaurant .more-info .icons li,
+.more-and-more .my-restaurants .my-restaurant .more-info .icons li {
+  margin-bottom: 10px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .icons .icon,
+.more-restaurants .my-restaurants .my-restaurant .more-info .icons .icon,
+.restaurants .my-restaurants .my-restaurant .more-info .icons .icon,
+.more-and-more .my-restaurants .my-restaurant .more-info .icons .icon {
+  margin-top: 1px;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .notice,
+.more-restaurants .my-restaurants .my-restaurant .more-info .notice,
+.restaurants .my-restaurants .my-restaurant .more-info .notice,
+.more-and-more .my-restaurants .my-restaurant .more-info .notice {
+  color: #f93;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info p,
+.more-restaurants .my-restaurants .my-restaurant .more-info p,
+.restaurants .my-restaurants .my-restaurant .more-info p,
+.more-and-more .my-restaurants .my-restaurant .more-info p {
+  margin: 5px 10px;
+  line-height: 150%;
+}
+.collect-restaurants .my-restaurants .my-restaurant .more-info .intro,
+.more-restaurants .my-restaurants .my-restaurant .more-info .intro,
+.restaurants .my-restaurants .my-restaurant .more-info .intro,
+.more-and-more .my-restaurants .my-restaurant .more-info .intro {
+  margin-bottom: 20px;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.near-restaurants .my-restaurants .my-restaurant {
+  position: relative;
+}
+.near-restaurants .my-restaurants .my-restaurant .picture {
+  width: 73px;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 2px;
+}
+.near-restaurants .my-restaurants .my-restaurant .picture img {
+  height: 42px;
+  width: 67px;
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+.near-restaurants .my-restaurants .my-restaurant .picture .count {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  height: 16px;
+  overflow: hidden;
+  display: block;
+}
+.near-restaurants .my-restaurants .my-restaurant .picture .count span {
+  margin-left: 0;
+}
+.near-restaurants .my-restaurants .my-restaurant .right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 21;
+  width: 85px;
+}
+.near-restaurants .my-restaurants .my-restaurant .right h4 {
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  font-weight: normal;
+  color: #333;
+}
+.near-restaurants .my-restaurants .my-restaurant .right em {
+  color: #666;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: tahoma, arial, '\5b8b\4f53', sans-serif;
+}
+.near-restaurants .my-restaurants .my-restaurant .right .old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 4px;
+}
+.near-restaurants .my-restaurants .my-restaurant .right .btn {
+  margin-top: 5px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #ff8400;
+  height: 22px;
+  line-height: 22px;
+  font-family: "Microsoft YaHei", '\9ed1\4f53';
+  text-align: center;
+  font-weight: bold;
+}
+.near-restaurants .my-restaurants .my-restaurant .right .btn:hover {
+  color: #f66;
+}
+@font-face {
+  font-family: 'header';
+  src: url("fonts/header.eot?ub0zok");
+  src: url("fonts/header.eot?#iefixub0zok") format("embedded-opentype"), url("fonts/header.woff?ub0zok") format("woff"), url("fonts/header.ttf?ub0zok") format("truetype"), url("fonts/header.svg?ub0zok#header") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'header';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-menu:before {
+  content: "\e600";
+}
+.icon-close:before {
+  content: "\e601";
+}
