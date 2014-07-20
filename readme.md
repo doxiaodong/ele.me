@@ -4,6 +4,7 @@
 
 ######	更新	: 2014.7.20
 --	更改预加载loading实现方式，更能反映图片张数和json文件个数的加载情况
+
 --	开始去学习node.js
 
 ### 文件说明
@@ -19,13 +20,13 @@
 
 --	IE bug:	用鼠标滚轮滚动会使得position: fixed 定位的元素忽闪忽闪的，没有找到解决方案
 
-	--	参考链接
+--	参考链接
 
-	--	https://connect.microsoft.com/IE/feedback/details/821953/ie10-ie11-fixed-background-images-move-when-touched-scrolled
+--	https://connect.microsoft.com/IE/feedback/details/821953/ie10-ie11-fixed-background-images-move-when-touched-scrolled
 
-	--	http://stackoverflow.com/questions/22165129/issue-in-ie-11-fixed-background-move-up-down-with-scroll
+--	http://stackoverflow.com/questions/22165129/issue-in-ie-11-fixed-background-move-up-down-with-scroll
 
-	--	http://social.msdn.microsoft.com/Forums/ie/en-US/9567fc32-016e-48e9-86e2-5fe51fd67402/new-bug-in-ie11-scrolling-positionfixed-backgroundimage-elements-jitters-badly?forum=iewebdevelopment	
+--	http://social.msdn.microsoft.com/Forums/ie/en-US/9567fc32-016e-48e9-86e2-5fe51fd67402/new-bug-in-ie11-scrolling-positionfixed-backgroundimage-elements-jitters-badly?forum=iewebdevelopment	
 
 ### ele网页
 
@@ -35,31 +36,39 @@
 ####	谁去拿外卖小游戏：
 
 --	新小游戏，通过类似刮奖的方式决定谁去（暂时四个刮刮卡）
+
 --	自适应， 小游戏窗口在 宽度x高度 = (320px -- 1366px)x(370px -- 700px)显示良好
+
 		-- 在宽度 = 768px(ipad)附近宽度改变
 
 ####	新增：
 
 --	由于页面数据较多，新增预加载loading页面。
+
 	--	实现方式是判断json数据加载和幻灯片组件的图片加载(并不能完全反映页面真实加载情况)
+
 	--	如果碰到loading时间过长，可能是json加载中计数器的问题。重新刷新页面即可
 
 #### 	导航栏:
 
 --	将导航栏固定在窗口顶端，方便用户直接搜索和进行其他操作
+
 	--	搜索输入框 采用$.ajax()，未能访问到数据，所以不具备搜索功能
+
 	--	购物车不具备相应功能
 
 ####	背景：
 
 --	6月- 9月： 6：00 - 20：00 白天背景(太阳，浅色) 其余时间 夜晚背景(星星，月亮，深色)
+
 --	10月 - 5月： 7：00 - 18：00 白天背景(太阳，浅色) 其余时间 夜晚背景(星星，月亮，深色)
+
 	--	好像页面有黄昏背景。。。
 
 ####	幻灯片切换组件： 
 
 --	使用方法： 
-	--
+
 		--	var promotion = new promotion(ele, {
 				width: ...,
 				height: ...,
@@ -71,11 +80,15 @@
 				duration: ...,
 				delay: ...
 			});
-			其中 ele 为jquery对象
+
+		--	其中 ele 为jquery对象
 
 --	幻灯片页数由source的url地址决定 
+
 --	每次切换时间和间隔时间分别由duration和delay决定
+
 --	幻灯片循环播放
+
 --	支持鼠标选择相应幻灯片，鼠标选择时，幻灯片停止播放，鼠标未做操作后2s幻灯片自动有当前页开始循环播放
 
 ####	我的收藏 不具备相应功能
@@ -85,31 +98,43 @@
 --	分为品牌馆(popRestaurant.json), 主要餐厅(mainRestaurant.json), 附近团购(tuangou.json), 更多餐厅(mamRestaurant.json) 四个部分
 
 --	都采用$.getJSON()方法
+
 --	json数据由自己根据给定url页面编写(真是一项体力活)，数据不完全和不准备难以避免
+
 --	取消原页面的鼠标悬停在送餐时间上的文字提示
+
 	--	(原因： 页面信心量较大，布局较拥挤)
+
 --	原页面详细信息悬浮窗的【维他】信息时有重复
+
 	--	改为取消重复
 
 --	原页面详细信息悬浮窗的信息经常出现被浏览器下端切，且由于鼠标置于悬浮窗上信息消失导致无法查看
+
 	--	1.与原方案相同(超级难看到被切部分); 2.鼠标置于悬浮窗上信息不消失(很难选到被悬浮窗遮挡的餐厅);
+
 	--	最终选择方案1(通过在src/js/app.js里616行添加或者删除 initMoreInfo($myRestaurant); 语句切换)
 
 --	取消餐厅名字前的【维他】字样，并未曲线详细信息悬浮窗里餐厅名字前的
+
 	--	(原因： 文字占用面积大，餐厅名称难以辨识)
 
 --	主要餐厅：
 
 	--	原页面热门餐厅和营业中只能二选其一
+
 		--	改为可以同时选中
 
 	--	原页面四个选择框在口味为非全部的时候 不能全部取消
+
 		--	改为可以全部取消，若全取消则显示所有餐厅
 
 	--	原页面在选择全部口味的时候 四个选择框若都未被选中， 则默认选择热门餐厅
+
 		--	改为显示所有餐厅
 
 	--	原页面起送价滑块三级跳跃跳动显得比较突兀
+
 		--	改为平滑滑动
 
 
@@ -138,11 +163,17 @@
 ###	为什么是前端
 
 --	我是个比较新的人，第一次听说‘前端’这个次也比较晚，大三时候在阿里巴巴的宣讲会上知道了网页工作有前端和后端的分别。
+
 --	后来感到大学里什么也没学到有点捉急以后怎么办的情况下‘很感兴趣’的去了解了前端。
+
 --	后来我还真的来了兴趣，主要有3点：
+
 	--	为了生计，javascript比较容易上手
+
 	--	网页相对于客户端的跨越性简直好到令人发指，而前端相对于后端的多种的语言来讲相对统一
+
 	--	最最重要的，前端的未来是很巨大的。现在整个前端技术都还在2.45D时代，却已经能做到很多高大上，炫酷的事情，如谷歌地图(map.google.com),哎呀，瑞士航空那个掉渣天的网站不见了。 
+
 	--	以后网速给劲，消灭客户端程序不是梦想。
 
 
