@@ -607,12 +607,13 @@ function mouseenterAndOut(tar) {
 	$myRestaurant.on('mouseenter', function() {
 		var $self = $(this);
 		initMoreInfo($myRestaurant);
+		clearTimeout(timeoutMoreInfo);
 		timeoutMoreInfo = setTimeout(function(){
 			$self.find(".more-info").css('visibility', 'visible');
 			$self.find(".book").removeClass('hide').find('div').css('color', '#0088c8');
 			$self.find(".name").css('color', '#0088c8');
 			$self.find(".staus-info").addClass('hide');
-		}, 1000);
+		}, 400);
 		$self.on('mousemove', function(e) {
 			e.stopPropagation();
 		});
@@ -622,12 +623,10 @@ function mouseenterAndOut(tar) {
 	// set moreInfo hidden when mouse on it if necessary
 	$myRestaurant.find('.more-info').on('mousemove', function() {
 		// release me hahah
-		initMoreInfo($myRestaurant);
-		clearTimeout(timeoutMoreInfo);
+		// initMoreInfo($myRestaurant);
 	});
 	$body.on('mousemove', function() {
 		initMoreInfo($myRestaurant);
-		clearTimeout(timeoutMoreInfo);
 	});
 	$myRestaurant.find(".book").find('div').on(defaultSet.click, function(e) {
 		e.preventDefault();
