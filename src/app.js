@@ -612,7 +612,7 @@ function mouseenterAndOut(tar) {
 			$self.find(".book").removeClass('hide').find('div').css('color', '#0088c8');
 			$self.find(".name").css('color', '#0088c8');
 			$self.find(".staus-info").addClass('hide');
-		}, 500);
+		}, 1000);
 		$self.on('mousemove', function(e) {
 			e.stopPropagation();
 		});
