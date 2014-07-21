@@ -607,12 +607,12 @@ function mouseenterAndOut(tar) {
 	$myRestaurant.on('mouseenter', function() {
 		var $self = $(this);
 		initMoreInfo($myRestaurant);
+		$self.find(".book").removeClass('hide').find('div').css('color', '#0088c8');
+		$self.find(".name").css('color', '#0088c8');
+		$self.find(".staus-info").addClass('hide');
 		clearTimeout(timeoutMoreInfo);
 		timeoutMoreInfo = setTimeout(function(){
 			$self.find(".more-info").css('visibility', 'visible');
-			$self.find(".book").removeClass('hide').find('div').css('color', '#0088c8');
-			$self.find(".name").css('color', '#0088c8');
-			$self.find(".staus-info").addClass('hide');
 		}, 400);
 		$self.on('mousemove', function(e) {
 			e.stopPropagation();
