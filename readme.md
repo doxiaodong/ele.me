@@ -6,14 +6,20 @@ http://duxiaodong.org/ele/
 
 ######	更新： 2014.8.1 v1.1.0
 --	兼容IE8（不支持canvas小游戏）
+
 --	更改html标签，增强语义化
+
 --	去除预加载loading界面，加载时间短，不需要，增加会让用户有种等待时间长的错觉(开启仅需改变app.js line 382,384,385当前的状态)
+
 --	更改悬浮窗出现形式，解决可能出现两个窗口的bug
+
 --	增加 不关闭页面，背景自动切换白天和晚上
+
 --	性能
 
---	尽可能使用visibility: hidden 代替 display: none (减少reflow开销)
---	将三个板块(more-restaurants, restaurants, more-and-more)的鼠标移动事件整合为一个事件
+	--	尽可能使用visibility: hidden 代替 display: none (减少reflow开销)
+
+	--	将三个板块(more-restaurants, restaurants, more-and-more)的鼠标移动事件整合为一个事件
 
 ######	更新: 2014.7.20 v1.0.1
 --	更改预加载loading实现方式，更能反映图片张数和json文件个数的加载情况
