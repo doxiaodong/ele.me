@@ -2,6 +2,8 @@
 ######	邮箱： reduxiaodong@gmail.com
 ######	电话： +86 186-5189-2172
 
+http://duxiaodong.org/ele/
+
 ######	更新： 2014.8.1 v1.1.0
 --	兼容IE8（不支持canvas小游戏）
 --	更改html标签，增强语义化
