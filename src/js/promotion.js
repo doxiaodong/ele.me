@@ -26,7 +26,8 @@
     };
     ol.find('.number' + nowPic).addClass('selected');
     ele.find('.preload').each(function() {
-        this.addEventListener('load', function() {
+        // this.addEventListener('load', function() {
+        $(this).on('load', function() {
             loaded++;
             if (loaded === nums) {
                 interval();

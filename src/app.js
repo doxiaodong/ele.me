@@ -1,5 +1,5 @@
 "use strict";
-/* built by duxiaodong: Fri Jul 19 2014 14:30:28 */
+/* built by duxiaodong: Fri Aug 1 2014 14:00:20 */
 /* mail: reduxiaodong@gmail.com */
 
 (function() {
@@ -33,7 +33,8 @@ var isTouchScreen = function(){
     return 'ontouchstart' in document.documentElement;
 };
 var defaultSet = {
-	click: isTouchScreen() ? 'touchstart' : 'click'
+	click: isTouchScreen() ? 'touchstart' : 'click',
+	mousemove: isTouchScreen() ? 'touchmove' : 'mousemove'
 };
 var $window = $(window),
 	$html = $('html'),
@@ -77,12 +78,19 @@ var dayTime = (monthNow < 10 && monthNow > 5) ? [6, 20] : [7, 18];
 
 var json = 0;
 var imgn = 0;
-window.addEventListener('load', function() {
+
+// IE8 cannot understand it
+// window.addEventListener('load', function() {
+$(document).ready(function() {
 	// day or night
 	dayOrNight();
-	setInterval(function() {
-		dayOrNight();
-	}, 1000);
+	if (!window.platform.isIE8) {
+		setInterval(function() {
+			timeNow = new Date();
+			minNow = timeNow.getMinutes();
+			dayOrNight();
+		}, 1000);
+	};
 
 	// new stars
 	starType.each(function() {
@@ -124,7 +132,7 @@ window.addEventListener('load', function() {
 		clearInterval(interval);
 		if (tsearchInput.val() === '') {
 			tsearchForm.removeClass("focus");
-			tsClear.addClass('hide')
+			tsClear.addClass('hide');
 		};
 	});
 
@@ -143,6 +151,10 @@ window.addEventListener('load', function() {
 
 	// game
 	$('.activity').find('.who').on(defaultSet.click, function() {
+		if ($html.hasClass('lt-ie9')) {
+			alert("浏览器不支持canvas，请升级您的浏览器。")
+			return;
+		};
 		if ($window.width() < 320) {
 			alert('窗口太窄');
 			return;
@@ -183,7 +195,7 @@ window.addEventListener('load', function() {
 	$.getJSON("json/tuangou.json").done(function(results) {
 		json++;
 		$.each(results, function(i, obj) {
-			myTg.append('<a class="my-restaurant" target="_blank" href="' + obj.dataHref + '"><div class="picture"><img src="' + obj.picture + '" title="' + obj.restaurant + '" alt="" /><div class="count"><span>' + obj.count + '</span>人购买</div></div><div class="right"><h4 class="restaurant">' + obj.restaurant + '</h4><em class="price">' + obj.price + '</em><em class="old-price">' + obj.oldPrice + '</em><div class="btn">立即抢购</div></div></a>');
+			myTg.append('<a class="my-restaurant" target="_blank" href="' + obj.dataHref + '"><div class="picture"><img src="' + obj.picture + '" title="' + obj.restaurant + '" alt="" /><div class="count"><span>' + obj.count + '</span>人购买</div></div><div class="right"><h2 class="restaurant">' + obj.restaurant + '</h2><em class="price">' + obj.price + '</em><em class="old-price">' + obj.oldPrice + '</em><div class="btn">立即抢购</div></div></a>');
 		});
 	});
 
@@ -197,9 +209,6 @@ window.addEventListener('load', function() {
 		});
 		myMain.find('.my-restaurant').css('display', 'none');
 		myMain.find('.my-restaurant.tuijian').css('display', 'block');
-		if (!isTouchScreen()) {
-			mouseenterAndOut(myMain);
-		};
 	});
 
 	// add popular
@@ -210,9 +219,6 @@ window.addEventListener('load', function() {
 		$.each(results, function(i, obj) {
 			addRestaurant(myPop, i, obj);
 		});
-		if (!isTouchScreen()) {
-			mouseenterAndOut(myPop);
-		};
 	});
 
 	// add more and more
@@ -222,9 +228,6 @@ window.addEventListener('load', function() {
 		$.each(results, function(i, obj) {
 			addRestaurant(myMam, i, obj);
 		});
-		if (!isTouchScreen()) {
-			mouseenterAndOut(myMam);
-		};
 	});
 	
 	var blockStore = '.my-restaurant.tuijian',
@@ -236,7 +239,7 @@ window.addEventListener('load', function() {
 			totalWidth = sliderTotal.width() - 10,
 			level = 'all';
 		deliverSlider.addClass("active");
-		$html.on('mousemove', function(e) {
+		$html.on(defaultSet.mousemove, function(e) {
 			actualWidth = e.pageX - sliderTotal.offset().left;
 			if(actualWidth < 0) {
 				actualWidth = 0;
@@ -379,16 +382,15 @@ window.addEventListener('load', function() {
 	// loading...
 	requstLoading();
 
+	// $body.addClass('loading');
+	// requstLoadingNeed();
 
-
-
-	
-
+	// resize window
 	$window.resize(function() {
 		getMoreInfoPos();
 		// redraw canvas
 		if (!$('.g-game').hasClass('hidden')) {
-			console.log("===redraw canvas===")
+			console.log("===redraw canvas game===")
 			$('.c-game').find('canvas').remove();
 			addCanvasGame();
 		};
@@ -411,7 +413,6 @@ function getMoreInfoPos() {
 
 function dayOrNight() {
 	hourNow = timeNow.getHours();
-
 	day = (hourNow < dayTime[1] && hourNow > dayTime[0]) ? 'day' : 'night';
 	if (day !== dayNow) {
 		background.removeClass(dayNow).addClass(day);
@@ -424,7 +425,7 @@ function dayOrNight() {
 // "holiday": "true",
 // "phone": "true"
 function addRestaurant(tar, i, obj){
-	tar.append('<a class="my-restaurant res' + i + '" target="_blank" href="' + obj.dataHref + '"><div class="box"><div class="logo-wrapper"><div class="logo"><img src="'+ obj.logo + '" alt="' + obj.restaurant + '" /></div><div class="deliver-time"><span>' + obj.deliverTime + '</span>分钟</div></div><div class="right"><div class="name">' + obj.restaurant + '</div><div class="flavor">' + obj.flavor + '</div><div class="staus"><span>休息中</span></div><div class="staus-info"><span>已打烊</span></div><div class="rating"><div class="rating-star"></div><span class="rating-number">' + obj.ratingNumber + '<span>订单</span></span></div><div class="icons"></div><div class="book hide"><div class="add">收藏</div><div class="unadd hide">取消收藏</div></div></div></div><div class="more-info"><div class="name"></div></div></a>');
+	tar.append('<section><a class="my-restaurant res' + i + '" target="_blank" href="' + obj.dataHref + '"><div class="box"><div class="logo-wrapper"><div class="logo"><img src="'+ obj.logo + '" alt="' + obj.restaurant + '" /></div><div class="deliver-time"><span>' + obj.deliverTime + '</span>分钟</div></div><div class="right"><h2 class="name">' + obj.restaurant + '</h2><div class="flavor">' + obj.flavor + '</div><div class="staus"><span>休息中</span></div><div class="staus-info"><span>已打烊</span></div><div class="rating"><div class="rating-star"></div><span class="rating-number">' + obj.ratingNumber + '<span>订单</span></span></div><div class="icons"></div><div class="book hide"><div class="add">收藏</div><div class="unadd hide">取消收藏</div></div></div></div><aside class="more-info"><h3 class="name"></h3></aside></a></section>');
 	var resI = tar.find('.res' + i);
 	var rightRatingStar = resI.find('.rating-star');
 	var rightRatingStarLevel = Math.floor(obj.ratingStar*2) === obj.ratingStar*2 ? Math.floor(obj.ratingStar*2) : (Math.floor(obj.ratingStar*2) + 1);
@@ -575,11 +576,11 @@ function addRestaurant(tar, i, obj){
 		moreInfo.append('<p class="notice"><strong>公告：</strong>' + obj.notice + '</p>');
 	};
 	if (obj.extra !== '') {
-		moreInfo.append('<p class="low"><strong>起送价：</strong>到<span class="where">G餐厅</span><span class="lowest">' + obj.lowest + '</span>元。<span class="extra">（额外说明：' + obj.extra + '）</span></p>');
+		moreInfo.append('<p class="low-price"><strong>起送价：</strong>到<span class="where">G餐厅</span><em class="lowest">' + obj.lowest + '</em>元。<span class="extra">（额外说明：' + obj.extra + '）</span></p>');
 	} else {
-		moreInfo.append('<p class="low"><strong>起送价：</strong>到<span class="where">G餐厅</span><span class="lowest">' + obj.lowest + '</span>元。</p>');
+		moreInfo.append('<p class="low-price"><strong>起送价：</strong>到<span class="where">G餐厅</span><em class="lowest">' + obj.lowest + '</em>元。</p>');
 	};
-	moreInfo.append('<p class="address"><strong>地址：</strong>' + obj.address + '</p>');
+	moreInfo.append('<address class="address"><strong>地址：</strong>' + obj.address + '</address>');
 
 	if (obj.openM.hour !=='' ) {
 		moreInfo.append('<p class="open-time"><strong>营业时间：</strong>' + openTimeString + ' - ' + mcloseTimeString + ' / ' + mopenTimeString + ' - ' + closeTimeString  + '</p>');
@@ -601,11 +602,15 @@ function addRestaurant(tar, i, obj){
 }
 
 // mouseenter and out
-function mouseenterAndOut(tar) {
-	var $myRestaurant = tar.find('.my-restaurant');
+function mouseenterAndOut() {
+	var $myRestaurant = $('.my-restaurant');
 	var timeoutMoreInfo;
 	$myRestaurant.on('mouseenter', function() {
 		var $self = $(this);
+		if ($self.parent().hasClass('no-more-info')) {
+			return;
+
+		};
 		initMoreInfo($myRestaurant);
 		$self.find(".book").removeClass('hide').find('div').css('color', '#0088c8');
 		$self.find(".name").css('color', '#0088c8');
@@ -614,18 +619,18 @@ function mouseenterAndOut(tar) {
 		timeoutMoreInfo = setTimeout(function(){
 			$self.find(".more-info").css('visibility', 'visible');
 		}, 400);
-		$self.on('mousemove', function(e) {
+		$self.on(defaultSet.mousemove, function(e) {
 			e.stopPropagation();
 		});
 	});
 
 	// look me
 	// set moreInfo hidden when mouse on it if necessary
-	$myRestaurant.find('.more-info').on('mousemove', function() {
+	$myRestaurant.find('.more-info').on(defaultSet.mousemove, function() {
 		// release me hahah
 		// initMoreInfo($myRestaurant);
 	});
-	$body.on('mousemove', function() {
+	$body.on(defaultSet.mousemove, function() {
 		initMoreInfo($myRestaurant);
 	});
 	$myRestaurant.find(".book").find('div').on(defaultSet.click, function(e) {
@@ -642,15 +647,29 @@ function initMoreInfo(tar) {
 }
 
 // request loading
+// no need loading
 function requstLoading() {
-		var loading = $(".load").find('.container');
-		var	imgNumberLoaded = 0;
-		var $img = $('img');
-		var imgLength = $img.length;
-		if (json !== 4) {
-			loading.stop();
-			loading.animate({'width': json/4*1/5*$window.width()}, 500);
+
+	var requstId = window.requestAnimationFrame(requstLoading);
+	if (json === 4) {
+		getMoreInfoPos();
+		if (platform.isDesktop) {
+			mouseenterAndOut();
 		};
+		window.cancelAnimationFrame(requstId);
+	};
+}
+
+// need loading
+function requstLoadingNeed() {
+	var loading = $(".load").find('.container');
+	var	imgNumberLoaded = 0;
+	var $img = $('img');
+	var imgLength = $img.length;
+	if (json !== 4) {
+		loading.stop();
+		loading.animate({'width': json/4*1/5*$window.width()}, 500);
+	};
 		
 	if (json === 4) {
 		for (var i = 0; i < imgLength; i++) {
@@ -661,13 +680,16 @@ function requstLoading() {
 		loading.stop();
 		loading.animate({'width': imgNumberLoaded/$img.length*$window.width()}, 500);
 	};
-	var requstId = window.requestAnimationFrame(requstLoading);
+	var requstId = window.requestAnimationFrame(requstLoadingNeed);
 	if (imgNumberLoaded === imgLength) {
 		loading.stop();
 		loading.animate({'width': $window.width()}, 500, function() {
 			loading.css('visibility', 'hidden');
 			$body.removeClass('loading');
 			getMoreInfoPos();
+			if (platform.isDesktop) {
+				mouseenterAndOut();
+			};
 		});
 		window.cancelAnimationFrame(requstId);
 	};
@@ -676,15 +698,15 @@ function requstLoading() {
 function addCanvasGame() {
 	if ($window.width() <= 751) {
 		new whoIsTheOne($('.c-game'), 4, {
-			back1: ['gray' ,'img/money.jpg'],
-			back2: ['red' ,'img/wa.jpg'],
+			back1: ['blue' ,''],
+			back2: ['red' ,''],
 			width: 0.4*$window.width(),
 			height: 1/4*$window.height()
 		});
 	} else {
 		new whoIsTheOne($('.c-game'), 4, {
-			back1: ['gray' ,'img/money.jpg'],
-			back2: ['red' ,'img/wa.jpg'],
+			back1: ['blue' ,''],
+			back2: ['red' ,''],
 			width: 0.22*$window.width(),
 			height: 1/4*$window.height()
 		});

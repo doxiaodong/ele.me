@@ -116,6 +116,11 @@ body{
 .loading>*{
 	visibility: hidden;
 }
+.lt-ie9 .load{
+	.srip{
+		margin-top: 40px;
+	}
+}
 .load{
 	position: fixed;
 	top: 0;
@@ -478,6 +483,9 @@ body{
 					padding: 3px 6px;
 					-webkit-transition: all 0.2s linear 0s;
 					transition: all 0.2s linear 0s;
+					legend{
+						display: none;
+					}
 					.icon-tsearch, .ts-loading, .ts-clear{
 						float: right;
 						width: 15px;
@@ -645,6 +653,7 @@ body{
 					float: left;
 					width: 15px;
 					height: 15px;
+					background: rgb(255, 255, 255);
 					background: rgba(255, 255, 255, 0.5);
 					font-size: 12px;
 					line-height: 15px;
@@ -654,7 +663,8 @@ body{
 					margin-right: 5px;
 				}
 				.selected{
-					background-color: rgba(255,102,0,0.8);
+					background-color: rgb(255, 102, 0);
+					background-color: rgba(255, 102, 0, 0.8);
 					color: white;
 					font-weight: bold;
 				}
@@ -681,11 +691,21 @@ body{
 		}
 		.collect-restaurants, .more-restaurants, .restaurants, .near-restaurants, .more-and-more{
 			margin-bottom: 15px;
+			.restaurant-header{
+				h1{
+					margin-left: 10px;
+					font-size: 14px;
+					font-weight: normal;
+					width: 60px;
+					float: left;
+				}
+			}
 		}
+
 		.collect-restaurants{
 			.restaurant-header{
 				span{
-					margin-left: 10px;
+					// margin-left: 10px;
 				}
 				a{
 					color: #999;
@@ -976,6 +996,7 @@ body{
 		display: block;
 		width: 48px;
 		height: 48px;
+		background: rgb(0, 0, 0);
 		background: rgba(0,0,0,0.5);
 		border-radius: 2px;
 	}
@@ -1108,6 +1129,7 @@ body{
 					.name{
 						cursor: pointer;
 						font-size: 15px;
+						font-weight: normal;
 						color: #333;
 						height: 18px;
 						overflow: hidden;
@@ -1276,6 +1298,7 @@ body{
 				.name{
 					font-size: 15px;
 					margin: 20px 0 0 10px;
+					font-weight: normal;
 				}
 				.receive, .info{
 					margin: 5px 10px;
@@ -1300,9 +1323,10 @@ body{
 				.notice{
 					color: #f93;
 				}
-				p{
+				p, address{
 					margin: 5px 10px;
 					line-height: 150%;
+					font-style: normal;
 				}
 				.intro{
 					margin-bottom: 20px;
@@ -1352,7 +1376,7 @@ body{
 				top: 10px;
 				z-index: 21;
 				width: 85px;
-				h4{
+				h2{
 					font-size: 14px;
 					height: 20px;
 					line-height: 20px;

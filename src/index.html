@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="lt-ie9" lang="zh"> <![endif]-->
-<!--[if IE 9 ]>        <html class="lt-ie10 ie9" lang="zh"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9 ie8" lang="zh"> <![endif]-->
+<!--[if IE 9]>        <html class="lt-ie10 ie9" lang="zh"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="zh">
 <!--<![endif]-->
@@ -18,8 +18,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--[if lt IE 9]>
+        <script>
+            (function() {
+			    var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+			    var i= e.length;
+			    while (i--){
+			        document.createElement(e[i]);
+			    } 
+			})()
+        </script>
+    <![endif]-->
 </head>
-<body class="loading">
+<body>
 	<div class="background night">
 		<div class="bg-sun"></div>
 		<div class="bg-moon"></div>
@@ -52,15 +64,21 @@
 					<div class="icon-mobile"></div>手机客户端
 				</a>
 				<div class="tsearch">
-					<form id="tsearch-form" class="tsearch-form clearfix" action="/search" method="get">
-						<div class="icon-tsearch"></div>
-						<input id="tsearch-input" class="tsearch-input" type="text" name="kw" autocomplete="off" placeholder="搜索餐厅，美食..."></input>
-						<div id="ts-loading" class="ts-loading hide"></div>
-						<div id="ts-clear" class="ts-clear hide"></div>		
+					<form id="tsearch-form" class="tsearch-form" action="/search" method="get">
+						<fieldset>
+						<legend>search restaurant</legend>
+							<section class="clearfix">
+								<label for="tsearch-input"></label>
+								<div class="icon-tsearch"></div>
+								<input id="tsearch-input" class="tsearch-input" type="text" name="tsearch-input" autocomplete="off" placeholder="搜索餐厅，美食..."></input>
+								<div id="ts-loading" class="ts-loading hide"></div>
+								<div id="ts-clear" class="ts-clear hide"></div>		
+							</section>
+						</fieldset>
 					</form>
 					<div id="tsearch-autocomplete" class="tsearch-autocomplete"></div>
 				</div>
-				<nav clearfix>
+				<nav>
 					<ul class="nav-site clearfix">
 						<li>
 							<a href="/profile/order">我的饿单</a>
@@ -102,31 +120,31 @@
 
 			<div id="promotion" class="banner"></div>
 
-			<div class="collect-restaurants">
-				<div class="restaurant-header">
-					<span>我的收藏</span>
+			<article class="collect-restaurants">
+				<header class="restaurant-header">
+					<h1>我的收藏</h1>
 					<a href="/profile/favor_restaurant">设置</a>
-				</div>
-				<div class="my-restaurants clearfix">
-					<div class="my-restaurant"></div>
-					<div class="my-restaurant"></div>
-					<div class="my-restaurant"></div>
-					<div class="my-restaurant"></div>
-					<div class="my-restaurant"></div>
-				</div>
-			</div>
+				</header>
+				<article class="my-restaurants clearfix">
+					<section class="my-restaurant"></section>
+					<section class="my-restaurant"></section>
+					<section class="my-restaurant"></section>
+					<section class="my-restaurant"></section>
+					<section class="my-restaurant"></section>
+				</article>
+			</article>
 
-			<div class="more-restaurants">
-				<div class="restaurant-header">
+			<article class="more-restaurants">
+				<header class="restaurant-header">
 					<a target="_blank" class="goto" href="http://ele.me/premium/psn/239e7ddb2164">前往品牌馆</a>
 					<a target="_blank" class="more" href="http://ele.me/premium/psn/239e7ddb2164">查看<span>0</span>家品牌餐厅</a>
-				</div>
-				<div class="my-restaurants clearfix">
-				</div>
-			</div>
+				</header>
+				<article class="my-restaurants clearfix">
+				</article>
+			</article>
 
-			<div class="restaurants">
-				<div class="restaurant-header">
+			<article class="restaurants">
+				<header class="restaurant-header">
 					<span class="check-btn checked">
 						<input type="checkbox" name="check" value="tuijian" checked="checked">
 						<span class="check-text tuijian">热门餐厅</span>
@@ -195,76 +213,78 @@
 						</div>
 						<span>起送价</span>
 					</div>
-				</div>
-				<div class="my-restaurants clearfix">
+				</header>
+				<article class="my-restaurants clearfix">
 
-				<!-- <a class="my-restaurant" target="_blank" href="">
-					<div class="box">
-						<div class="logo-wrapper">
-							<div class="logo" href="">
-								<img src="http://fuss10.elemecdn.com/9/40/1af86d3bd32d4bebee05b010114c9jpeg_size_42_42.jpeg" alt="" />
+				<!-- <section>
+					<a class="my-restaurant" target="_blank" href="">
+						<div class="box">
+							<div class="logo-wrapper">
+								<div class="logo" href="">
+									<img src="http://fuss10.elemecdn.com/9/40/1af86d3bd32d4bebee05b010114c9jpeg_size_42_42.jpeg" alt="" />
+								</div>
+								<div class="deliver-time"><span>44</span>分钟</div>
 							</div>
-							<div class="deliver-time"><span>44</span>分钟</div>
+							<div class="right">
+								<h2 class="name">皇鹏烧鹅仔（珠江新城店）</h2>
+								<div class="flavor">中式</div>
+								<div class="staus">
+									<span>休息中</span>
+								</div>
+								<div class="staus-info">
+									<span>已打烊</span>
+								</div>
+								<div class="rating">
+									<div class="rating-star r7"></div>
+									<span class="rating-number">95<span>订单</span></span>
+								</div>
+								<div class="icons">
+									<img class="icon" src="http://fuss10.elemecdn.com/3/ea/060c294de2d291c59c87357315111png.png" />
+									<span class="icon invoice"></span>
+								</div>
+								<div class="book">
+									<div class="add">收藏</div>
+									<div class="unadd hide">取消收藏</div>
+								</div>
+							</div>
 						</div>
-						<div class="right">
-							<div class="name">皇鹏烧鹅仔（珠江新城店）</div>
-							<div class="flavor">中式</div>
-							<div class="staus">
-								<span>休息中</span>
-							</div>
-							<div class="staus-info">
-								<span>已打烊</span>
-							</div>
-							<div class="rating">
-								<div class="rating-star r7"></div>
-								<span class="rating-number">95<span>订单</span></span>
-							</div>
-							<div class="icons">
-								<img class="icon" src="http://fuss10.elemecdn.com/3/ea/060c294de2d291c59c87357315111png.png" />
-								<span class="icon invoice"></span>
-							</div>
-							<div class="book">
-								<div class="add">收藏</div>
-								<div class="unadd hide">取消收藏</div>
-							</div>
-						</div>
-					</div>
 
-					<div class="more-info">
-						<div class="name">新味力</div>
-						<p class="receive">不支持订单</p>
-						<p class="info">已打烊</p>
-						<div class="divider"></div>
-						<ul class="icons">
-							<li class="online-pay">
-								<span class="icon online-pay"></span>
-								<span class="desc">该餐厅支持在线支付</span>
-							</li>
-						</ul>
-						<p class="notice">
-							<strong>公告：</strong>
-							来顶啊！！！
-						</p>
-						<p class="low">
-							<strong>起送价：</strong>
-							到<span class="where">G餐厅</span><span class="lowest">40</span>元。<span class="extra">（额外说明：）</span>
-						</p>
-						<p class="address">
-							<strong>地址：</strong>
-							天河体育馆
-						</p>
-						<p class="open-time">
-							<strong>营业时间：</strong>
-							8:00-21:00
-						</p>
-						<p class="intro">
-							<strong>简介：</strong>
-							9999
-						</p>
-					</div>
-				</a> -->
-				</div>
-			</div>
+						<aside class="more-info">
+							<h3 class="name">新味力</h3>
+							<p class="receive">不支持订单</p>
+							<p class="info">已打烊</p>
+							<div class="divider"></div>
+							<ul class="icons">
+								<li class="online-pay">
+									<span class="icon online-pay"></span>
+									<span class="desc">该餐厅支持在线支付</span>
+								</li>
+							</ul>
+							<p class="notice">
+								<strong>公告：</strong>
+								来顶啊！！！
+							</p>
+							<p class="low">
+								<strong>起送价：</strong>
+								到<span class="where">G餐厅</span><em class="lowest">40</em>元。<span class="extra">（额外说明：）</span>
+							</p>
+							<address class="address">
+								<strong>地址：</strong>
+								天河体育馆
+							</address>
+							<p class="open-time">
+								<strong>营业时间：</strong>
+								8:00-21:00
+							</p>
+							<p class="intro">
+								<strong>简介：</strong>
+								9999
+							</p>
+						</aside>
+					</a> 
+				</section> -->
+				</article>
+			</article>
 
 			<div class="activity clearfix">
 				<a class="hot-food" target="_blank" href="http://ele.me/entry/findhotfood">
@@ -284,32 +304,32 @@
 				</a>
 			</div>
 
-			<div class="near-restaurants">
-				<div class="restaurant-header">
-					<span>附近团购</span>
-				</div>
-				<div class="my-restaurants clearfix">
+			<article class="near-restaurants">
+				<header class="restaurant-header">
+					<h1>附近团购</h1>
+				</header>
+				<article class="my-restaurants clearfix no-more-info">
 					<!-- <div class="my-restaurant" data-href="http://t.dianping.com/deal/6244272">
 						<div class="picture">
 							<img src="http://i1.s2.dpfile.com/pc/mc/03ede3f97f230feea9b84a616bbd5204(80x50)/thumb.jpg" title="万岁寿司·料理" alt="" />
 							<div class="count"><span>30088</span>人购买</div>
 						</div>
 						<div class="right">
-							<h4 class="restaurant">万岁寿司·料理</h4>
+							<h2 class="restaurant">万岁寿司·料理</h2>
 							<em class="price">¥76</em>
 							<em class="old-price">¥100</em>
 							<div class="btn">立即抢购</div>
 						</div>
 					</div> -->
-				</div>
-			</div>
-			<div class="more-and-more">
-				<div class="restaurant-header">
-					<span>更多餐厅</span>
-				</div>
-				<div class="my-restaurants clearfix">
-				</div>
-			</div>
+				</article>
+			</article>
+			<article class="more-and-more">
+				<header class="restaurant-header">
+					<h1>更多餐厅</h1>
+				</header>
+				<article class="my-restaurants clearfix">
+				</article>
+			</article>
 		</div>
 
 		<footer>
